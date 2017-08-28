@@ -1,0 +1,40 @@
+body {
+    background-image: url("videogames.png");
+}
+h5 {
+	font: Arial;
+	font-style: italic;
+	color: #3e8e41;
+}
+#rightSide {
+	position: absolute;
+    right: 0px;
+    margin-left: 66%
+}
+#screenParagraph {
+	font-size: 16px;
+	font-style: italic;
+	color: #	3e8e41;
+}
+#leftSide {
+	margin-left: 3%
+}
+
+.btn-group .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    width: 50%
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    opacity: 0.6;
+}
+
+.btn-group .button:hover {
+    background-color: #3e8e41;
+}
