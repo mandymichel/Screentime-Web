@@ -33,8 +33,8 @@ Add Activity
 					</tr>
 					<br>
 					<tr>
-					<td><label>Name(e.g. Star Wars):</label></td>
-					<td><input type="text" name="activityName" /></td>
+					<td><label>Name:</label></td>
+					<td><input type="text" name="activityName" placeholder="e.g. Star Wars"/></td>
 					</tr>
 					<tr>
 					<td><label>Educational:</label></td>

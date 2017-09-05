@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
 html, body{
 	margin-left:15px; margin-right:15px; 
 	padding:0px; 
@@ -27,7 +30,7 @@ tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 100%; background: #07d266; margin-top: 0px; padding:15px 0px 15px 15px;}
+#header {width: 100%; background: #07d266; margin-top: 0px; padding:15px 0px 15px 15px; text-align: center;}
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
@@ -44,4 +47,16 @@ tr:nth-child(odd) {background: #BBBBBB}
 	
 	margin-bottom: 15px;
 	background: #cccccc;
+}
+a:link, a:visited {
+	color: #38488f;
+	text-decoration: none;
+}
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #cccccc;
+  text-align: center;
 }

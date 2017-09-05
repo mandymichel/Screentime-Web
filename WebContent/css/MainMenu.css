@@ -1,19 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
 body {
     background-image: url("videogames.png");
+    background-repeat: no-repeat;        
 }
 h5 {
-	font: Arial;
-	font-style: italic;
-	color: #3e8e41;
+	color: #0657ff;
+	  font-family: "Merriweather", serif;
 }
 #rightSide {
 	position: absolute;
     right: 0px;
-    margin-left: 66%
+    margin-left: 66%;
 }
 #screenParagraph {
 	font-size: 16px;
-	font-style: italic;
+    font-family: "Merriweather", serif;
 	color: #	3e8e41;
 }
 #leftSide {
@@ -25,9 +28,9 @@ h5 {
     border: none;
     width: 50%
     color: white;
-    padding: 15px 32px;
+    padding: 15px 28px;
     text-align: center;
-    text-decoration: none;
+    font-family: "Merriweather", serif;
     display: block;
     font-size: 16px;
     cursor: pointer;
@@ -37,4 +40,16 @@ h5 {
 
 .btn-group .button:hover {
     background-color: #3e8e41;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3px;
+  font-family: "Merriweather", serif;
+  color: white;
+  font-size: 30px;
+  background-color: #0657ff;
+  text-align: center;
 }

@@ -196,15 +196,21 @@ public class EventControllerServlet extends HttpServlet {
 	}
 
 	private void listEvents(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// List<ScreenActivity> activities = activityDBUtil.getActivities();
-		// request.setAttribute("ACTIVITY_LIST", activities);
-		// RequestDispatcher dispatcher =
-		// request.getRequestDispatcher("/list_events.jsp");
-		// dispatcher.forward(request, response);
-		// get students from db util
-		List<ScreenEvent> events = eventDBUtil.getEvents();
-		// add students to the request
+		int page = 1;
+        int recordsPerPage = 10;
+        if(request.getParameter("page") != null)
+            page = Integer.parseInt(request.getParameter("page"));
+		// get events from db util
+		List<ScreenEvent> events = eventDBUtil.getPaginationEvents((page - 1)*recordsPerPage,
+                recordsPerPage);
+        int noOfRecords = eventDBUtil.getNoOfRecords();
+        System.out.println("noOfRecords: " + noOfRecords);
+        int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordsPerPage);
+        System.out.println("noOfPages: " + noOfPages);
+		// add events to the request
 		request.setAttribute("EVENT_LIST", events);
+		request.setAttribute("noOfPages", noOfPages);
+        request.setAttribute("currentPage", page);
 		// send to jsp page (view)
 		RequestDispatcher dispatcher2 = request.getRequestDispatcher("/list_events.jsp");
 		dispatcher2.forward(request, response);

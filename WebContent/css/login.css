@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+body {
+    background-image: url("videogame2.png");
+    background-repeat: no-repeat;    
+}
+html, body{
+	margin-left:15px; margin-right:15px; 
+	padding:0px; 
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+table {   
+	border-collapse:collapse;
+	border-bottom:1px solid gray;
+	border-radius: 5px; 
+	font-family: Tahoma,Verdana,Segoe,sans-serif;
+	width:33%;
+}
+ 
+th {
+	border-bottom:1px solid gray;
+	background:none repeat scroll 0 0 #7307d2;
+	padding:10px;
+	color: #ffffff;
+}
+
+tr {
+	text-align:center;	
+}
+.login_button {
+	border: 1px solid #666; 
+	padding: 4px; 
+	font-size: 12px;
+	font-weight: bold;
+	width: 100px; 
+	padding: 5px 10px; 
+	
+	margin-bottom: 15px;
+	background: #0e4efd;
+}
+.error {
+	color: #ff221c;
+}
+#login_box {
+	margin-left: 30%;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3px;
+  font-family: "Merriweather", serif;
+  color: white;
+  font-size: 30px;
+  background-color: #0657ff;
+  text-align: center;
+}

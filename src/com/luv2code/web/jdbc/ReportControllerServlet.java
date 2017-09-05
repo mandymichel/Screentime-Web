@@ -173,7 +173,20 @@ public class ReportControllerServlet extends HttpServlet {
 			throws Exception {
 		List<ScreenReport> reports = eventDBUtil.searchByName(firstName);
 		List<Integer> sumMinuteMonth = addMonthMinutes(reports);
-
+		List<String> months = new ArrayList<>();
+		months.add("January");
+		months.add("February");
+		months.add("March");
+		months.add("April");
+		months.add("May");
+		months.add("June");
+		months.add("July");
+		months.add("August");
+		months.add("September");
+		months.add("October");
+		months.add("November");
+		months.add("December");
+		request.setAttribute("MONTHS", months);
 		request.setAttribute("TIMEMONTHLYYEAR", sumMinuteMonth); // send to JSP page (view)
 		request.setAttribute("CHILDNAME", firstName);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/time_monthly_year.jsp");
@@ -471,21 +484,9 @@ public class ReportControllerServlet extends HttpServlet {
 	}
 
 }
-//save this below that Jason helped with, in case new algorithm doesn't work
-/**for (ScreenReport r : reports) {
-//get the list from the map
-String newMonth = findMonth(r.getStartDateTime());
-int elapsedTimeEvent = findElapsedTime(r.getStartDateTime(), r.getEndDateTime());
-
-List<Integer> minutes;
-//if it doesn't exist, create a new list
-if (hash.containsKey(newMonth)) {
-	minutes = hash.get(newMonth);
-} else {
-	minutes = new ArrayList<Integer>();
-}
-
-//add the minutes to the map
-minutes.add(elapsedTimeEvent);
-hash.put(newMonth, minutes);
-}	*/
+//try this in jsp. Make an ArrayList in report servlet of the months and send it to the jsp
+//<c:forEach var="childAge" items="${childAges}" >
+//<c:forEach var="age" items="${childAge}" >
+//    ${age}
+//</c:forEach>
+//</c:forEach>

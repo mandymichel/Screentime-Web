@@ -71,8 +71,10 @@
 		</table>
 		</div>
 	</div>
-	<a href="MainMenu.jsp">Back to Main Menu</a>
-	<br>
-	<a href="EventControllerServlet">Go to Events</a>
 </body>
+<div class="footer">
+	<p>
+		<a href="MainMenu.jsp">Back to Main Menu</a><a href="EventControllerServlet">|Go to Events</a>
+	</p>
+</div>
 </html>

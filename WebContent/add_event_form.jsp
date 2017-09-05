@@ -36,12 +36,12 @@
 					
 					<tr>
 						<td><label>Child's Name:</label></td>
-						<td><input type="text" name="firstName"/></td>
+						<td><input type="text" name="firstName" placeholder="First Name"/></td>
 							
 					</tr>
 					<tr>
 						<td><label>Notes:</label></td>
-						<td><input type="text" name="notes" /></td>
+						<td><input type="text" name="notes" placeholder="Description, rating, etc."/></td>
 					</tr>
 					
 					<tr>

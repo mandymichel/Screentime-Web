@@ -9,12 +9,15 @@
       function drawChart() {
 
        //figure out how to put actual month names in here
-        var data = google.visualization.arrayToDataTable([
+        var dataTable = [
           ['number', 'Monthly Minutes'],
-           <c:forEach var="dataIntValue" items="${TIMEMONTHLYYEAR}">
-                ['Month', ${dataIntValue}],
-            </c:forEach>		
-        ]);   
+          	<c:forEach var="dataIntValue" items="${TIMEMONTHLYYEAR}" varStatus="loop">
+			    ['${MONTHS.get(loop.index)}', ${dataIntValue}],      
+             </c:forEach>		
+        ];
+        console.log(dataTable);
+        var data = google.visualization.arrayToDataTable(dataTable);  
+       	
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 
