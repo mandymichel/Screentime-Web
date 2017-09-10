@@ -35,15 +35,18 @@ tr {
 	font-weight: bold;
 	width: 100px; 
 	padding: 5px 10px; 
-	
 	margin-bottom: 15px;
 	background: #0e4efd;
 }
 .error {
 	color: #ff221c;
+	font-size: 75%;
 }
 #login_box {
 	margin-left: 30%;
+}
+#wizard {
+	margin-left: 60%;
 }
 .footer {
   position: absolute;
@@ -56,4 +59,16 @@ tr {
   font-size: 30px;
   background-color: #0657ff;
   text-align: center;
+}
+.register-button {
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 12px;
+	font-weight: bold;
+	width: 120px; 
+	padding: 5px 10px; 
+	margin-left: 30%;
+	margin-bottom: 15px;
+	background: #cccccc;
 }

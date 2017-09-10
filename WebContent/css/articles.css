@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+body {
+	color: blue;
+	font-family: Merriweather;
+}
+p {
+	color: black;
+}
+#top {
+	background-color: grey;
+	padding: 5px;
+	text-align: center;
+	opacity: 0.8;
+	border-radius: 25px;
+	
+}
+
+a:link, a:visited {
+	color: #38488f;
+	text-decoration: none;
+}

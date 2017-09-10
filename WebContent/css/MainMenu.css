@@ -36,6 +36,7 @@ h5 {
     cursor: pointer;
     float: left;
     opacity: 0.6;
+    border-radius: 25px;
 }
 
 .btn-group .button:hover {
@@ -52,4 +53,5 @@ h5 {
   font-size: 30px;
   background-color: #0657ff;
   text-align: center;
+  border-radius: 25px;
 }

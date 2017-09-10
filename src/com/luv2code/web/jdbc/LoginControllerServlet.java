@@ -3,6 +3,7 @@ package com.luv2code.web.jdbc;
 import java.io.IOException;
 
 import javax.annotation.Resource;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -52,12 +53,41 @@ public class LoginControllerServlet extends HttpServlet {
 			case "LOGIN":
 				doPost(request, response);
 				break;
+			case "REGISTER":
+				register(request, response);
+			case "CREATEUSER":
+				validateUser(request, response);
 			default:
 				doPost(request, response);
 			}
 		} catch (Exception exc) {
 			throw new ServletException(exc);
 		}	}
+
+	private void validateUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		   String firstName = request.getParameter("firstName");
+		   String lastName = request.getParameter("lastName");
+		   String strUserName = request.getParameter("userName");
+		   String strPassword = request.getParameter("password");	
+		   HttpSession session = request.getSession();
+		   int invalid = 0;
+		   String strErrMsg = "User name or Password is invalid.";
+		   if (strPassword.length() < 8 ) {
+			   invalid = 1;
+			   session.setAttribute("INVALID", invalid);
+			   session.setAttribute("errorMsg", strErrMsg);
+			   RequestDispatcher rd = request.getRequestDispatcher("/new_user.jsp");
+				rd.forward(request, response);		   }
+		   else {
+			   loginDBUtil.enterNewUser(firstName, lastName, strUserName, strPassword);
+			   RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
+				rd.forward(request, response);		   }
+	}
+
+	private void register(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		RequestDispatcher rd = request.getRequestDispatcher("/new_user.jsp");
+		rd.forward(request, response);		
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

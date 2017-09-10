@@ -11,12 +11,8 @@ import java.util.List;
 import javax.sql.DataSource;
 
 public class LoginDBUtil {
-	private static final String DBNAME = "tf_loginappdb";
-	private static final String DB_USERNAME = "root";
-	private static final String DB_PASSWORD = "admin*";
-	 
-	private static final String LOGIN_QUERY = "select * from users where user_name=? and password=?";
-	
+	private static final String salt = BCrypt.gensalt();
+	 	
 	private static DataSource dataSource;
 	
 	public LoginDBUtil (DataSource theDataSource) {
@@ -35,23 +31,67 @@ public class LoginDBUtil {
 		   }
 		   return myConn;
 	}
-	public boolean authenticateLogin(String strUserName, String strPassword) throws Exception {
-		   boolean isValid = false;
-		   Connection conn = null;
-		   try {
-		     conn = getConnection();
-		     PreparedStatement prepStmt = conn.prepareStatement(LOGIN_QUERY);
-		     prepStmt.setString(1, strUserName);
-		     prepStmt.setString(2, strPassword);
-		     ResultSet rs = prepStmt.executeQuery();
-		     if(rs.next()) {
-		       System.out.println("User login is valid in DB");
-		       isValid = true; 
-		     }
-		  } catch(Exception e) {
-		    System.out.println("validateLogon: Error while validating password: "+e.getMessage());
-		    throw e;
-		  } 
-		  return isValid;
-		}
+	public boolean authenticateLogin(String userName, String userPassword) throws SQLException {
+		System.out.println("Made it to the authenticateLogin method");
+		System.out.println(salt);
+		// create JDBC objects
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+			// get connection
+			conn = dataSource.getConnection();
+			
+			// create SQL String and PreparedStatement to SELECT userEmail, if name matches
+			String sql = "SELECT * FROM users WHERE user_name LIKE ?";
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, userName);
+
+			// execute SQL statement
+			rs = stmt.executeQuery();
+			// return boolean
+			if (rs.next()) {
+				
+				String hashed = rs.getString("password");
+				System.out.println(hashed);
+				// verify password
+				if (BCrypt.checkpw(userPassword, hashed)) {
+					System.out.println("password correct");
+					return true;
+				}
+				else {
+					System.out.println("password incorrect");
+					return false;
+				}
+			} else {
+				// no user
+				return false;
+			}
+	}
+	//fix this for encrypting password and THEN entering it into the database
+	public void enterNewUser(String firstName, String lastName, String strUserName, String strPassword) {
+		Connection myConn = null;
+		PreparedStatement myStmt = null;
+		String hashedPassword = BCrypt.hashpw(strPassword, salt);//fix this after reviewing BCrypt
+		// create SQL statement for insert
+		try {
+			myConn = dataSource.getConnection();
+			String sql = "insert into users "
+					+ "(first_name, last_name, user_name, password)"
+					+ "values (?, ?, ?, ?)";
+			myStmt = myConn.prepareStatement(sql);
+			// set param values for the activity
+			myStmt.setString(1, firstName);
+			myStmt.setString(2, lastName);
+			myStmt.setString(3, strUserName);
+			myStmt.setString(4, hashedPassword);
+			// execute SQL insert
+			myStmt.execute();
+			System.out.println("Registered a new user.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		// clean up JDBC objects		
+	}
 }
