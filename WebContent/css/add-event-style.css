@@ -44,7 +44,7 @@ tr {
 	text-align:left;	
 }
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #7307d2;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -53,7 +53,7 @@ tr {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+    background-color: #7307d2;
 }
 
 .dropdown {
@@ -81,3 +81,6 @@ tr {
 .dropdown a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
+a:hover {               
+    color:#7307d2;
+ }

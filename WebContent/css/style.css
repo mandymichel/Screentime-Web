@@ -11,7 +11,7 @@ table {
 	border-collapse:collapse;
 	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
-	width:100%;
+	width:90%;
 }
  
 th {
@@ -31,7 +31,8 @@ tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
  
 #wrapper {width: 100%; margin-top: 0px; }
-#header {width: 100%; background: #07d266; margin-top: 0px; padding:15px 0px 15px 15px; text-align: center; border-radius: 25px; opacity: 0.6;
+#header {width: 90%; background: #07d266; margin-top: 0px; padding:15px 0px 15px 15px; text-align: center; border-radius: 25px; opacity: 0.8;
+border: 4px solid gray;
 }
 #header h2 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
@@ -50,6 +51,26 @@ tr:nth-child(odd) {background: #BBBBBB}
 	margin-bottom: 15px;
 	background: #cccccc;
 }
+#search-text {
+	position: relative;
+	top: -10px;
+	float: left;
+}
+#search-box {
+	margin: 5px;
+	position: relative;
+	float: left;
+}
+#search-button {
+	margin: 5px;
+	position: relative;
+	float: left;	
+}
+#reset-button {
+	margin: 5px;
+	position: relative;
+	float: left;
+}
 a:link, a:visited {
 	color: #38488f;
 	text-decoration: none;
@@ -62,3 +83,6 @@ a:link, a:visited {
   background-color: #cccccc;
   text-align: center;
 }
+a:hover {               
+    color:#07d266;
+ }

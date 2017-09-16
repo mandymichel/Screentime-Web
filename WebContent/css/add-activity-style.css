@@ -42,5 +42,6 @@ tr:nth-child(odd) {background: #FFFFFF}
 tr {
 	border-style:none;
 	text-align:left;	
+	margin: 10px;
 }
-	
+

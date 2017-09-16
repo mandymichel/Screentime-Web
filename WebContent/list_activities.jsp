@@ -24,18 +24,18 @@
 		<!--  add a search box -->
 		<form action="ActivityControllerServlet" method="GET">
 
-			<input type="hidden" name="command" value="SEARCH" />
+			<input type="hidden" name="command" value="SEARCH" /><p id="search-text">
 
-			Search activities by name: <input type="text" name="theSearchActivity" />
+			Search activities by name: </p><input type="text" name="theSearchActivity" id="search-box"/>
 
-			<input type="submit" value="Search" class="add-activity-button" />	
+			<input type="submit" value="Search" class="add-activity-button" id="search-button"/>	
 
 		</form>
 		<form action="ActivityControllerServlet" method="GET">
 
 			<input type="hidden" name="command" value="LIST" />
 
-			<input type="submit" value="Reset" class="add-activity-button" />	
+			<input type="submit" value="Reset" class="add-activity-button" id="reset-button"/>	
 
 		</form>
 		<table>

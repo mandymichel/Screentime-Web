@@ -51,10 +51,10 @@ Add Activity
 				</tbody>
 			</table>
 			</form>
+				</div>
 	<div style="clear: both;"></div>
 	<p>
 		<a href="ActivityControllerServlet">Back to Activity List</a>
 	</p>
-	</div>
 </body>
 </html>

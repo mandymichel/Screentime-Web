@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/MainMenu.css" />
 </head>
 <body>
-	<h5>Main Menu</h5>
+<h5>Welcome to Child Screentime Wizard, ${userName}!</h5>
 	<div id="rightSide">
 		<p id="screenParagraph">All children and teens need adequate sleep
 			(8-12 hours, depending on age), physical activity (1 hour), and time
@@ -40,10 +40,9 @@
 				src="https://www.youtube.com/embed/A8-lUtOhUQc" frameborder="0"
 				allowfullscreen></iframe>
 		</p>
-	</div>	
+	</div>
 </body>
 <div class="footer">
-	<p>Child Screen Time Wizard 
-	</p>
+	<p>Child Screen Time Wizard</p>
 </div>
 </html>

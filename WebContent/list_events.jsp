@@ -32,14 +32,14 @@
 			<!--  add a search box -->
 			<form action="EventControllerServlet" method="GET">
 
-				<input type="hidden" name="command" value="SEARCH" /> Search events
-				by child name: <input type="text" name="theSearchEvent" /> <input
-					type="submit" value="Search" class="add-event-button" />
+				<input type="hidden" name="command" value="SEARCH" /> <p id="search-text">Search events
+				by child name: </p><input type="text" name="theSearchEvent" id="search-box"/> <input
+					type="submit" value="Search" class="add-event-button" id="search-button" />
 
 			</form>
 			<form action="EventControllerServlet" method="GET">
 				<input type="hidden" name="command" value="LIST" /> <input
-					type="submit" value="Reset" class="add-event-button" />
+					type="submit" value="Reset" class="add-event-button" id="reset-button" />
 			</form>
 
 			<table>
