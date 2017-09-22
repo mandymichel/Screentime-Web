@@ -379,12 +379,9 @@ public class ReportControllerServlet extends HttpServlet {
 			avMinutes = 0;
 		}
 		Integer averageMinutes = new Integer(avMinutes);
-		Map<String, Integer> m = new HashMap<String, Integer>();
-		// Put elements to the map
-		m.put(firstName, averageMinutes);
-		request.setAttribute("CHILDAVERAGE", m); // send to JSP page (view)
+		request.setAttribute("CHILDAVERAGE", averageMinutes); // send to JSP page (view)
 		request.setAttribute("CHILDNAME", firstName);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/av_time_per_day_educational.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/screen_report.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -409,12 +406,9 @@ public class ReportControllerServlet extends HttpServlet {
 			avMinutes = 0;
 		}
 		Integer averageMinutes = new Integer(avMinutes);
-		Map<String, Integer> m = new HashMap<String, Integer>();
-		// Put elements to the map
-		m.put(firstName, averageMinutes);
-		request.setAttribute("CHILDAVERAGE", m); // send to JSP page (view)
+		request.setAttribute("CHILDAVERAGE", averageMinutes); // send to JSP page (view)
 		request.setAttribute("CHILDNAME", firstName);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/av_time_per_day_uneducational.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/screen_report.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -451,15 +445,11 @@ public class ReportControllerServlet extends HttpServlet {
 		}
 		avMinutes = totalMinutes / numberOfDays;
 		Integer averageMinutes = new Integer(avMinutes);
-		Map<String, Integer> m = new HashMap<String, Integer>();
-		// Put elements to the map
-		m.put(chosenChildEvents.get(0).getFirstName(), averageMinutes);
-		request.setAttribute("CHILDAVERAGE", m);
+		request.setAttribute("CHILDAVERAGE", averageMinutes);
 		request.setAttribute("CHILDNAME", firstName);
 		// send to JSP page (view)
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/av_time_per_day.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/screen_report.jsp");
 		dispatcher.forward(request, response);
-
 	}
 
 	public int findElapsedTime(String startDateTime, String endDateTime) {
@@ -484,9 +474,3 @@ public class ReportControllerServlet extends HttpServlet {
 	}
 
 }
-//try this in jsp. Make an ArrayList in report servlet of the months and send it to the jsp
-//<c:forEach var="childAge" items="${childAges}" >
-//<c:forEach var="age" items="${childAge}" >
-//    ${age}
-//</c:forEach>
-//</c:forEach>

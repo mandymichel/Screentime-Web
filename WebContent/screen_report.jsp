@@ -37,12 +37,17 @@
 					</select></td>
 				</tr>
 				<tr>
-					<td><label></label></td>
 					<td><input type="submit" value="Create Report"
-						class=".create_report_button" /></td>
+						class="create_report_button" /></td>
+					<td><c:set var="average" scope="session"
+							value="${CHILDAVERAGE}" /> <c:out value="${CHILDAVERAGE}" /> minutes</td>
 				</tr>
 			</tbody>
 		</table>
+	</form>
+	<form action="ReportControllerServlet" method="GET">
+		<input type="hidden" name="command" value="CREATE" />
+	<input type="submit" value="Reset" class="create_report_button"/>
 	</form>
 	<div style="clear: both;"></div>
 </div>
