@@ -1,0 +1,20 @@
+.shape {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 15px;
+  display: normal;
+}
+#circle {
+  background-color: green;
+  border-radius: 50%;  
+}
+#firstSquare {
+  background-color: red;
+}
+#secondSquare {
+  background-color: red;
+}
+#text {
+	display: none;
+}

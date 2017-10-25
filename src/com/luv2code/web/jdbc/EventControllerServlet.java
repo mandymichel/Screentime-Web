@@ -154,7 +154,7 @@ public class EventControllerServlet extends HttpServlet {
 		String startDateTime = request.getParameter("startDateTime");
 		String endDateTime = request.getParameter("endDateTime");
 		String notes = request.getParameter("notes");
-		int actID = Integer.parseInt(request.getParameter("actID"));
+		int actID = Integer.parseInt(request.getParameter("actIDString"));
 		String elapsedTime = findElapsedTime(startDateTime, endDateTime);
 		// create a new event object
 		ScreenEvent theEvent = new ScreenEvent(firstName, startDateTime, endDateTime, notes, eventID, actID,
