@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/MainMenu.css" />
 </head>
 <body>
-<h5>Welcome to Child Screentime Wizard, ${userName}!</h5>
+<h5>Welcome to Child Screentime Wizard, ${userName}! ${hello}!</h5>
 	<div id="rightSide">
 		<p id="screenParagraph">All children and teens need adequate sleep
 			(8-12 hours, depending on age), physical activity (1 hour), and time
@@ -27,8 +27,8 @@
 			<input class="button" type="submit" value="Activities"
 				name="screenOption" />
 		</form>
-		<form action="articles.jsp">
-			<input class="button" type="submit" value="Articles"
+		<form action="VideoControllerServlet">
+			<input class="button" type="submit" value="Another Video"
 				name="screenOption" />
 		</form>
 
@@ -37,7 +37,7 @@
 		</p>
 		<p>
 			<iframe width="479" height="294"
-				src="https://www.youtube.com/embed/A8-lUtOhUQc" frameborder="0"
+				src="${RANDOM_VIDEO}" frameborder="0"
 				allowfullscreen></iframe>
 		</p>
 	</div>

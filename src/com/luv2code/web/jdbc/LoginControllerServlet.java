@@ -97,6 +97,7 @@ public class LoginControllerServlet extends HttpServlet {
 		   String strUserName = request.getParameter("userName");
 		   String strPassword = request.getParameter("password");
 		   String strErrMsg = null;
+		   String hello = "Hello";
 		   HttpSession session = request.getSession();
 		   boolean isValidLogon = false;
 		   int invalid = 0;
@@ -104,6 +105,7 @@ public class LoginControllerServlet extends HttpServlet {
 		     isValidLogon = loginDBUtil.authenticateLogin(strUserName, strPassword);
 		     if(isValidLogon) {
 		        session.setAttribute("userName", strUserName);
+		        session.setAttribute("hello", hello);
 		     } else {
 		        strErrMsg = "User name or Password is invalid.";
 		     }
