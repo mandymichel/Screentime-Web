@@ -7,6 +7,17 @@
 <head>
 <title>Screentime Tracker App</title>
 <link type="text/css" rel="stylesheet" href="css/eventstyle.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
@@ -32,14 +43,17 @@
 			<!--  add a search box -->
 			<form action="EventControllerServlet" method="GET">
 
-				<input type="hidden" name="command" value="SEARCH" /> <p id="search-text">Search events
-				by child name: </p><input type="text" name="theSearchEvent" id="search-box"/> <input
-					type="submit" value="Search" class="add-event-button" id="search-button" />
+				<input type="hidden" name="command" value="SEARCH" />
+				<p id="search-text">Search events by child name:</p>
+				<input type="text" name="theSearchEvent" id="search-box" /> <input
+					type="submit" value="Search" class="add-event-button"
+					id="search-button" />
 
 			</form>
 			<form action="EventControllerServlet" method="GET">
 				<input type="hidden" name="command" value="LIST" /> <input
-					type="submit" value="Reset" class="add-event-button" id="reset-button" />
+					type="submit" value="Reset" class="add-event-button"
+					id="reset-button" />
 			</form>
 
 			<table>
@@ -81,42 +95,43 @@
 			</table>
 			<br />
 			<%--For displaying Previous link except for the 1st page --%>
-			<c:if test="${currentPage != 1}">
-				<td><a href="event.do?page=${currentPage - 1}">Previous</a></td>
-			</c:if>
+
 			<br /> <br />
 			<%--For displaying Page numbers.
     The when condition does not display a link for the current page--%>
-			<table>
-				<tr>
-					<c:forEach begin="1" end="${noOfPages}" var="i">
-						<c:choose>
-							<c:when test="${currentPage eq i}">
-								<td>${i}</td>
-							</c:when>
-							<c:otherwise>
-								<td><a href="event.do?page=${i}">${i}</a></td>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-				</tr>
-			</table>
 
-			<%--For displaying Next link --%>
-			<c:if test="${currentPage lt noOfPages}">
-				<td><a href="event.do?page=${currentPage + 1}">Next</a></td>
-
-			</c:if>
-
+			<nav aria-label="Page navigation">
+			<ul class="pagination">
+				<li><c:if test="${currentPage != 1}">
+						<a href="event.do?page=${currentPage - 1}" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</c:if></li>
+				<c:forEach begin="1" end="${noOfPages}" var="i">
+					<c:choose>
+						<c:when test="${currentPage eq i}">
+							 <li><a href="#">${i}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a href="event.do?page=${i}">${i}</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				<li><c:if test="${currentPage lt noOfPages}">
+						<a href="event.do?page=${currentPage + 1}" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</c:if></li>
+			</ul>
+			</nav>
 		</div>
 	</div>
 </body>
-<br/>
-<br/>
-<br/>
-<div class="footer">
-	<p>
-		<a href="MainMenu.jsp">Back to Main Menu</a><a href="ActivityControllerServlet">|Go to Activities</a>
-	</p>
+<br />
+<!--  ActivityControllerServlet-->
+<div class="navbarSection">
+<nav class="navbar fixed-bottom navbar-dark">
+  <a class="navbar-brand" href="MainMenu.jsp">Main Menu</a>
+</nav>
 </div>
 </html>

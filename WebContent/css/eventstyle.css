@@ -78,9 +78,13 @@ border: 4px solid gray;
   text-align: center;
 }
 a:link, a:visited {
-	color: #38488f;
+	color: #FFFFFF;
 	text-decoration: none;
 }
 a:hover {               
     color:#7307d2;
+ }
+ .navbarSection {
+ 	background-color: #7307d2;
+ 	color: #FFFFFF;
  }
